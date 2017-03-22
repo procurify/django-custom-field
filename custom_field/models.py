@@ -42,12 +42,7 @@ class CustomField(models.Model):
         max_length=5000,
         blank=True,
         help_text="You may leave blank. For user Jquery Mask, ex: '00/00/0000' for date.")
-    field_choices = models.CharField(
-        max_length=2000,
-        blank=True,
-        help_text="List the choices you want displayed, seperated by commas. "
-        "This is only valid for Dropdown, Multiple, and Checkbox field types",
-    )
+    field_choices = models.TextField(blank=True)
 
     def get_value_for_object(self, obj):
         return CustomFieldValue.objects.get_or_create(
