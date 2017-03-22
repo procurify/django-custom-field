@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('custom_field', '0003_customfield_mask'),
+        ('custom_field', '0002_auto_20150119_2032'),
     ]
 
     operations = [

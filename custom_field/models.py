@@ -38,10 +38,10 @@ class CustomField(models.Model):
         blank=True,
         help_text="You may leave blank. For Boolean use True or False")
     is_required = models.BooleanField(default=False)
-    mask = models.CharField(
-        max_length=5000,
-        blank=True,
-        help_text="You may leave blank. For user Jquery Mask, ex: '00/00/0000' for date.")
+    # mask = models.CharField(
+    #     max_length=5000,
+    #     blank=True,
+    #     help_text="You may leave blank. For user Jquery Mask, ex: '00/00/0000' for date.")
     field_choices = models.TextField(blank=True) # support lots of drop down
 
     def get_value_for_object(self, obj):
