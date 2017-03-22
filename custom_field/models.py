@@ -18,7 +18,7 @@ class CustomField(models.Model):
     A field abstract -- it describe what the field is.  There are one of these
     for each custom field the user configures.
     """
-    name = models.CharField(max_length=150)
+    name = models.CharField(max_length=200) # consistent with old Field Attribute table
     content_type = models.ForeignKey(ContentType)
     field_type = models.CharField(
         max_length=1,
@@ -42,7 +42,7 @@ class CustomField(models.Model):
         max_length=5000,
         blank=True,
         help_text="You may leave blank. For user Jquery Mask, ex: '00/00/0000' for date.")
-    field_choices = models.TextField(blank=True)
+    field_choices = models.TextField(blank=True) # support lots of drop down
 
     def get_value_for_object(self, obj):
         return CustomFieldValue.objects.get_or_create(
