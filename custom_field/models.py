@@ -93,7 +93,7 @@ class CustomFieldValue(models.Model):
     """
     field = models.ForeignKey(CustomField, related_name='instance')
     value = models.CharField(max_length=5000, blank=True, null=True)
-    object_id = models.PositiveIntegerField()
+    object_id = models.PositiveIntegerField(db_index=True)
     content_type = models.ForeignKey(ContentType, blank=True, null=True)
     content_object = fields.GenericForeignKey('content_type', 'object_id')
 
