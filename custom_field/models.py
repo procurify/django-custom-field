@@ -95,7 +95,7 @@ class CustomFieldValue(models.Model):
         CustomField, related_name="instance", on_delete=models.CASCADE
     )
     value = models.CharField(max_length=5000, blank=True, null=True)
-    object_id = models.PositiveIntegerField()
+    object_id = models.PositiveIntegerField(db_index=True)
     content_type = models.ForeignKey(
         ContentType, blank=True, null=True, on_delete=models.CASCADE
     )
